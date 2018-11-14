@@ -4,36 +4,40 @@
 <head>
   <meta charset="utf-8">
   <title>William Morris</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #f8f8f8;
+    }
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400|Lato|Josefin+Slab" rel="stylesheet">
+    @media all and (max-width: 600px) {
+      #monkey {
+          width: 70%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="flex-container">
-    <div class="flex-item-avatar">
-      <div class="avatar">
-        <img src='images/avatar.png' width="150" />
-      </div>
+  <img id="monkey" src="images/monkey-ears.png" />
+  <script type="text/javascript">
+    (function () {
+        var monkies = ['images/monkey-ears.png', 'images/monkey-eyes.png', 'images/monkey-mouth.png'];
+        var imageElement = document.getElementById('monkey');
 
-      <div class="writing">
-        <div class="writing-title">
-          Will<b>Morris</b>
-        </div>
-        <div class="writing-subtitle">
-          I write code for Yoox Net-A-Porter
-        </div>
-      </div>
-    </div>
+        setInterval(printRandom, 600);
 
-    <div class="flex-item-icons">
-      <div>
-        <ul class="social-icons">
-          <li> <a title="Email" href="mailto:will.morris00@gmail.com"><img src="images/social/mail.svg" /></a></li>
-          <li> <a title="Github" href="https://github.com/wmorris92" target="_blank"><img src="images/social/github.svg" /></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+        function printRandom() {
+            var randomMonkey = monkies[parseInt(Math.random()*monkies.length)];
+            imageElement.src = randomMonkey
+        }
+    })();
+  </script>
 </body>
 </html>
